@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Selamat Hari Lahir, INSYIRAH!</title>
+  <meta name="description" content="Kad ucapan untuk INSYIRAH — TERIMALAH KEMAAFAN DARI ABANG" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page" role="main">
+    <div class="card" role="article" aria-labelledby="name">
+      <h1 id="name" class="name">INSYIRAH</h1>
+      <p class="message">TERIMALAH KEMAAFAN DARI ABANG</p>
+
+      <div class="controls" aria-hidden="false">
+        <button id="playBtn" class="btn primary" aria-pressed="false">Main Muzik</button>
+        <button id="confettiBtn" class="btn">Raikan!</button>
+
+        <div class="share">
+          <button id="copyBtn" class="btn">Salin Pautan</button>
+          <a id="waBtn" class="btn" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        </div>
+      </div>
+
+      <footer class="note">Muzik contoh: gunakan butang "Main Muzik" — autoplay biasanya disekat oleh pelayar.</footer>
+    </div>
+  </main>
+
+  <!-- Audio (played by user action) -->
+  <audio id="bgAudio" src="https://example.com/song.mp3" preload="auto"></audio>
+
+  <!-- confetti lib -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
