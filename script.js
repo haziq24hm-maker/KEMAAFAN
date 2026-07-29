@@ -10,15 +10,19 @@ let confettiInterval = null;
 
 function toggleAudio() {
   if (!isPlaying) {
-    audio.play().then(() => {
-      // Audio berjaya dimainkan
-    }).catch((error) => {
-      // Sekatan autoplay iPhone/iOS
-      console.log("Autoplay dihalang:", error);
-    });
-    playBtn.textContent = 'Berhenti Muzik';
-    playBtn.setAttribute('aria-pressed', 'true');
-    isPlaying = true;
+    // Memastikan audio dimuatkan semula sebelum play di iOS
+    audio.load();
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        playBtn.textContent = 'Berhenti Muzik';
+        playBtn.setAttribute('aria-pressed', 'true');
+        isPlaying = true;
+      }).catch((error) => {
+        console.log("Ralat memainkan audio di iOS:", error);
+      });
+    }
   } else {
     audio.pause();
     playBtn.textContent = 'Main Muzik';
