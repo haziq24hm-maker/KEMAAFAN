@@ -87,12 +87,14 @@ body{
   color:#777;
 }
 .emoji-bg {
-  position: fixed;
-  top: -50px;
-  z-index: -1;
-  pointer-events: none;
-  animation-name: fall;
-  animation-timing-function: linear;
+  position : fixed ; 
+  top : -50 px ; 
+  z-index : -1 ; 
+  pointer-events : none ; 
+  animation-name : fall ; 
+  animation-timing-function : linear ; 
+  opacity : 1 ; 
+  filter : brightness(120%) ; 
 }
 
 @keyframes fall {
