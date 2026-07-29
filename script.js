@@ -10,17 +10,21 @@ let confettiInterval = null;
 
 function toggleAudio() {
   if (!isPlaying) {
-    // Memastikan audio dimuatkan semula sebelum play di iOS
+    // Memastikan pautan lagu dimuatkan semula untuk Safari iOS
+    audio.src = encodeURI("Maafkanlah.mp3");
     audio.load();
-    const playPromise = audio.play();
+    
+    // Panggil play dalam interaksi terus pengguna
+    var playPromise = audio.play();
 
     if (playPromise !== undefined) {
-      playPromise.then(() => {
+      playPromise.then(function() {
         playBtn.textContent = 'Berhenti Muzik';
         playBtn.setAttribute('aria-pressed', 'true');
         isPlaying = true;
-      }).catch((error) => {
-        console.log("Ralat memainkan audio di iOS:", error);
+      }).catch(function(error) {
+        console.log("Ralat main audio di iPhone:", error);
+        alert("Sila pastikan iPhone tidak dalam Silent Mode / Mute.");
       });
     }
   } else {
