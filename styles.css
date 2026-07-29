@@ -94,7 +94,7 @@ body{
   animation-name : fall ; 
   animation-timing-function : linear ; 
   opacity : 1 ; 
-  filter : brightness(400%) ; 
+  filter : brightness(50%) ; 
 }
 
 @keyframes fall {
