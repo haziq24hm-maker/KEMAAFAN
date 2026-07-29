@@ -10,7 +10,7 @@ function createSadEmoji() {
   // Saiz rawak
   emoji.style.fontSize = Math.random() * 20 + 20 + 'px';
   // Kelajuan jatuh rawak (5s ke 10s)
-  emoji.style.duration = Math.random() * 5 + 5 + 's';
+  emoji.style.animationDuration = Math.random() * 5 + 5 + 's';
   // Ketelusan (opacity) rendah supaya nampak macam background
   emoji.style.opacity = Math.random() * 0.3 + 0.1;
 
