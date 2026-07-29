@@ -8,12 +8,13 @@ const audio = document.getElementById('bgAudio');
 let isPlaying = false;
 let confettiInterval = null;
 
-function toggleAudio(){
-  if (!isPlaying){
+function toggleAudio() {
+  if (!isPlaying) {
     audio.play().then(() => {
-      // playing
-    }).catch(()=> {
-      // autoplay/user gesture required
+      // Audio berjaya dimainkan
+    }).catch((error) => {
+      // Sekatan autoplay iPhone/iOS
+      console.log("Autoplay dihalang:", error);
     });
     playBtn.textContent = 'Berhenti Muzik';
     playBtn.setAttribute('aria-pressed', 'true');
